@@ -1,0 +1,149 @@
+:root {
+    --default-background-color: #101022;
+    --default-color: #dce1ff;
+
+    --current-month-cell-border-color: #9aa0c2;
+    --current-month-cell-color: #050538;
+    --current-month-cell-background-color: #a3b6f3;
+
+    --default-month-cell-background-color: #eeeeff;
+    --default-month-cell-color: #202022;
+    --default-month-cell-border-color: #d1ccee;
+
+    --heading-cell-background-color: #0c27bd;
+    --heading-cell-color: #fafaff;
+    --heading-cell-border-color: #2d2d8a;
+
+    --current-day-cell-background-color: #454ec7;
+    --current-day-cell-color: #ffeeee;
+
+    --selected-day-color: #111159;
+    --selected-day-background-color: #888fcc;
+
+    --current-day-selected-day-cell-background-color: #000088;
+    --current-day-selected-day-cell-color: #ffeeee;
+
+    --hud-border-color: #ffeeee;
+    --hud-background-color: #0c24bd;
+    --hud-button-background-color: #5565c5;
+    --hud-icon-color: #e2e1f1;
+    --hud-button-hover-background-color: #0c27bd;
+    --hud-button-hover-border-color: #ffeeee;
+    --hud-icon-hover-color: #ffeeee;
+}
+
+body {
+    background: var(--default-background-color);
+    color: var(--default-color);
+    font-family: sans-serif;
+}
+
+div.calendar-container {
+    width: 60em;
+}
+
+div.calendar {
+    border: white thin solid;
+}
+
+div.calendar-row {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+div.calendar-row .cell {
+    background: var(--default-month-cell-background-color);
+    color: var(--default-month-cell-color);
+    border-color: var(--default-month-cell-border-color);
+    padding: 0.5em 0.75em;
+    border-style: solid;
+    border-width: 1px;
+}
+
+div.calendar-row .cell.heading {
+    background: var(--heading-cell-background-color);
+    color: var(--heading-cell-color);
+    border-color: var(--heading-cell-border-color);
+}
+
+div.calendar-row .cell.selected-day {
+    font-weight: bold;
+    color: var(--selected-day-color);
+    background-color: var(--selected-day-background-color);
+}
+
+div.calendar-row .current-month {
+    background: var(--current-month-cell-background-color);
+    color: var(--current-month-cell-color);
+    border-color: var(--current-month-cell-border-color);
+}
+
+div.calendar-row .current-day {
+    background-color: var(--current-day-cell-background-color);
+    color: var(--current-day-cell-color);
+}
+
+div.calendar-row .current-day.selected-day {
+    color: var(--current-day-selected-day-cell-color);
+    background-color: var(--current-day-selected-day-cell-background-color);
+}
+
+div.calendar-row .show-month {
+    font-weight: bold;
+}
+
+div.hud {
+    border:solid var(--hud-border-color) 1px;
+    border-radius: 5px;
+    background-color: var(--hud-background-color);
+    padding: 0.5em;
+    margin: auto 0.5em;
+}
+
+div.hud button {
+    background-color: var(--hud-button-background-color);
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 1px;
+    width: 3em;
+    height: 3em;
+}
+
+div.hud button svg {
+    stroke: var(--hud-icon-color);
+    width: 1.5em;
+    height: 1.5em;
+}
+
+div.hud button:hover {
+    background-color: var(--hud-button-hover-background-color);
+    border-color: var(--hud-button-hover-border-color);
+}
+
+div.hud button:hover svg {
+    stroke: var(--hud-icon-hover-color);
+}
+
+div.hud div.control-container {
+    align-items: center;
+    text-align: center;
+    display:inline-grid;
+    column-gap:0.5em;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+button.icon-button {
+    margin-top: 2em;
+    font-size: small;
+}
+
+button.icon-button span {
+    display: inline-block;
+}
+
+#date-display {
+    flex-flow: column;
+    flex-grow: 1;
+    text-align: center;
+    font-size: xxx-large;
+}

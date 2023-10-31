@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Calendar</title>
+    <link rel="stylesheet" href="src/style.css">
+</head>
+
+<body>
+    <div style="display:inline-grid;column-gap: 1.0em;" class="container">
+        <div class="hud" style="grid-row:2;grid-column:1;display:inline-grid;row-gap:0.5em;">
+            <div id="day-controls" class="control-container" style="grid-row:1;">
+                <div style="grid-column:1;">
+                    <button id="prev-day-button" title="Previous Day">
+                        <svg style="transform: rotate(-90deg);">
+                            <use xlink:href="src/icons/icons.svg#caret-up"></use>
+                        </svg>
+                    </button>
+                </div>
+                <div style="grid-column:2">Day</div>
+                <div style="grid-column:3">
+                    <button id="next-day-button" title="Next Day">
+                        <svg style="transform: rotate(-90deg);">
+                            <use xlink:href="src/icons/icons.svg#caret-down"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div id="week-controls" class="control-container" style="grid-row:2">
+                <div style="grid-column:1;">
+                    <button id="prev-week-button" title="Previous Week">
+                        <svg>
+                            <use xlink:href="src/icons/icons.svg#caret-up"></use>
+                        </svg>
+                    </button>
+                </div>
+                <div style="grid-column:2;">Week</div>
+                <div style="grid-column:3;">
+                    <button id="next-week-button" title="Next Week">
+                        <svg>
+                            <use xlink:href="src/icons/icons.svg#caret-down"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div id="month-controls" class="control-container" style="grid-row:3">
+                <div style="grid-column:1;">
+                    <button id="prev-month-button" title="Previous Month">
+                        <svg>
+                            <use xlink:href="src/icons/icons.svg#caret-up"></use>
+                        </svg>
+                    </button>
+                </div>
+                <div style="grid-column:2;">Month</div>
+                <div style="grid-column:3;">
+                    <button id="next-month-button" title="Next Month">
+                        <svg>
+                            <use xlink:href="src/icons/icons.svg#caret-down"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div id="year-controls" class="control-container" style="grid-row:4;">
+                <div style="grid-column:1;">
+                    <button id="prev-year-button" title="Previous Year">
+                        <svg>
+                            <use xlink:href="src/icons/icons.svg#caret-up"></use>
+                        </svg>
+                    </button>
+                </div>
+                <div style="grid-column:2;">Year</div>
+                <div style="grid-column:3;">
+                    <button id="next-year-button" title="Next Year">
+                        <svg>
+                            <use xlink:href="src/icons/icons.svg#caret-down"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div id="year-controls" class="control-container"
+                style="grid-row:5;display: inline-grid;grid-column-gap: 0.5em;">
+                <div style="grid-column:1;">
+                    <button id="show-more-button" title="Show More">
+                        <svg>
+                            <use xlink:href="src/icons/icons.svg#plus"></use>
+                        </svg>
+                    </button>
+                </div>
+                <div style="grid-column:2;">Size</div>
+                <div style="grid-column:3;">
+                    <button id="show-less-button" title="Show Less">
+                        <svg>
+                            <use xlink:href="src/icons/icons.svg#dash"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div id="year-controls" class="control-container"
+                style="grid-row:6;display: inline-grid;grid-column-gap: 0.5em;">
+                <div style="grid-column:2;">Today</div>
+                <div style="grid-column:3;">
+                    <button id="today-button" title="Go to Today">
+                        <svg>
+                            <use xlink:href="src/icons/icons.svg#calendar-check"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="date-display" style="grid-row:1;grid-column:2"></div>
+        <div style="grid-row:2/4;grid-column:2;" class="calendar-container">
+            <div class="calendar">
+                <div class="calendar-row">
+                    <div style="grid-row:1; grid-column:1;" class="cell heading">Sunday</div>
+                    <div style="grid-row:1; grid-column:2;" class="cell heading">Monday</div>
+                    <div style="grid-row:1; grid-column:3;" class="cell heading">Tuesday</div>
+                    <div style="grid-row:1; grid-column:4;" class="cell heading">Wednesday</div>
+                    <div style="grid-row:1; grid-column:5;" class="cell heading">Thursday</div>
+                    <div style="grid-row:1; grid-column:6;" class="cell heading">Friday</div>
+                    <div style="grid-row:1; grid-column:7;" class="cell heading">Saturday</div>
+                </div>
+                <div id="calendar-container" class="calendar-row">
+                </div>
+            </div>
+            <script type="module" src="src/script.ts"></script>
+        </div>
+    </div>
+</body>
+
+</html>
