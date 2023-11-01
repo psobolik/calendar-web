@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+    environment {
+        TARGET_FOLDER = '/usr/local/www/calendar'
+    }
+    stages {
+        stage('Setup') {
+            steps {
+                sh 'yarn install'
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'yarn build'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh 'rsync --recursive --relative ./dist/calendar $TARGET_FOLDER'
+                // This works because we allow Jenkins to sudo systemctl without a password
+                sh 'sudo systemctl restart apache2'
+            }
+        }
+    }
+}
