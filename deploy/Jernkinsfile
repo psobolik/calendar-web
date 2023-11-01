@@ -11,12 +11,12 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'yarn build'
+                sh 'yarn build --base=/calendar --outDir=dist/calendar'
             }
         }
         stage('Deploy') {
             steps {
-                sh 'rsync --recursive --relative ./dist/calendar $TARGET_FOLDER'
+                sh 'rsync --recursive ./dist/calendar/ $TARGET_FOLDER'
                 // This works because we allow Jenkins to sudo systemctl without a password
                 sh 'sudo systemctl restart apache2'
             }
