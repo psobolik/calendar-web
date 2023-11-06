@@ -111,6 +111,9 @@ div.hud button {
 
 div.hud button svg {
     stroke: var(--hud-icon-color);
+    fill-opacity: 1;
+    fill:var(--hud-icon-color);
+    stroke-opacity:1;
     width: 1.5em;
     height: 1.5em;
 }
