@@ -12,9 +12,9 @@
   "license": "MIT",
   "scripts": {
     "dev": "vite --open",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "preview": "vite preview --open",
-    "build-marconi": "tsc && vite build --base=/calendar --outDir=dist/calendar",
+    "build-marconi": "vite build --base=/calendar --outDir=dist/calendar",
     "preview-marconi": "vite preview --base=/calendar --outDir=dist/calendar --open"
   },
   "devDependencies": {

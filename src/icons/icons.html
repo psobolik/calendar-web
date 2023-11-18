@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!--suppress CssUnusedSymbol -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Icons</title>
+    <style>
+        :root {
+            --body-color: #212121;
+            --bg-color: #444444;
+            --icon-fill: #dfdfdf;
+            --svg-width: 75px;
+        }
+        body {
+            font-family: sans-serif;
+            margin: 1em 1em;
+            background-color: var(--body-color);
+            color: #dfdfdf;
+        }
+
+        .icon-container {
+            width: 100px;
+            display: inline-table;
+            text-align: center;
+            padding: 0.5em;
+        }
+
+        .svg-container {
+            width: var(--svg-width);
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 0.75em;
+            background-color: var(--bg-color);
+            border: solid thin var(--bg-color);
+            border-radius: 10px;
+            fill: var(--icon-fill);
+            padding: 0.5em;
+            display: block;
+        }
+
+        .svg-container svg {
+            width: var(--svg-width);
+            height: var(--svg-width);
+        }
+    </style>
+</head>
+<body>
+<script>
+    const svgFile = './icons.svg';
+
+    window.addEventListener('load', () => {
+        fetch(svgFile)
+            .then(result => {
+                return result.text()
+            })
+            .then(parseSvg)
+            .then(getSymbolIds)
+            .then(appendSymbols)
+    })
+
+    function parseSvg(text) {
+        return new Promise(resolve => {
+            const domParser = new DOMParser();
+            resolve(domParser.parseFromString(text, "image/svg+xml"));
+        })
+    }
+
+    function getSymbolIds(svg) {
+        return new Promise(resolve => {
+            const xpath = '//*[name()="symbol"]/@id';
+            const xPathEvaluator = new XPathEvaluator();
+            const expression = xPathEvaluator.createExpression(xpath);
+            resolve(expression.evaluate(svg, XPathResult.ORDERED_NODE_ITERATOR_TYPE));
+        })
+    }
+
+    function appendSymbols(symbolIds) {
+        const container = document.body;
+
+        let symbolId = null;
+        while ((symbolId = symbolIds.iterateNext())) {
+            const symbolName = symbolId.value;
+
+            const iconContainer = container.appendChild(document.createElement('div'));
+            iconContainer.classList.add('icon-container');
+            iconContainer.id = symbolName;
+
+            const svgContainer = iconContainer.appendChild(document.createElement('div'));
+            svgContainer.classList.add('svg-container');
+
+            const svg = svgContainer.appendChild(document.createElementNS('http://www.w3.org/2000/svg', 'svg'));
+
+            const use = svg.appendChild(document.createElementNS('http://www.w3.org/2000/svg', 'use'))
+            use.setAttribute('href', `${svgFile}#${symbolName}`);
+
+            const label = iconContainer.appendChild(document.createElement('label'));
+            label.setAttribute('for', symbolName);
+            label.innerText = symbolName;
+        }
+    }
+</script>
+</body>
+</html>
