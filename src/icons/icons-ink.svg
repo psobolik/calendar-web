@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   width="78"
+   height="16"
+   id="svg8"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   sodipodi:docname="icons-ink.svg"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     id="namedview8"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="21.125"
+     inkscape:cx="40"
+     inkscape:cy="8"
+     inkscape:window-width="2560"
+     inkscape:window-height="1370"
+     inkscape:window-x="2993"
+     inkscape:window-y="-6"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg8" />
+  <symbol
+     id="caret-up"
+     viewBox="0 0 16 16">
+    <path
+       d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z"
+       id="path1" />
+  </symbol>
+  <symbol
+     id="plus"
+     viewBox="0 0 16 16">
+    <path
+       d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+       id="path2" />
+  </symbol>
+  <symbol
+     id="dash"
+     viewBox="0 0 16 16">
+    <path
+       d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"
+       id="path3" />
+  </symbol>
+  <symbol
+     id="calendar-check"
+     viewBox="0 0 16 18">
+    <path
+       d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"
+       id="path4" />
+    <path
+       d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"
+       id="path5" />
+  </symbol>
+  <!-- The following allow us to see what the symbols above look like, although they inflate the file. -->
+    <rect x="0" y="0" width="16" height="16"/>
+    <rect x="20" y="0" width="16" height="16"/>
+    <rect x="40" y="0" width="16" height="16"/>
+    <rect x="60" y="0" width="16" height="16"/>
+  <use
+     xlink:href="#caret-up"
+     width="16"
+     height="16"
+     x="0"
+     y="0"
+     style="fill:#ff0000;fill-opacity:1;stroke:#ff0000;stroke-opacity:1"
+     id="use5" />
+  <use
+     xlink:href="#plus"
+     width="16"
+     height="16"
+     x="20"
+     y="0"
+     style="fill:#ff0000;fill-opacity:1;stroke:#ff0000;stroke-opacity:1"
+     id="use6" />
+  <use
+     xlink:href="#dash"
+     width="16"
+     height="16"
+     x="40"
+     y="0"
+     style="fill:#ff0000;fill-opacity:1;stroke:#ff0000;stroke-opacity:1"
+     id="use7" />
+  <use
+     xlink:href="#calendar-check"
+     width="16"
+     height="16"
+     x="60"
+     y="0.75"
+     style="fill:#ff0000;fill-opacity:1;stroke:#ff0000;stroke-opacity:1"
+     id="use8" />
+</svg>
