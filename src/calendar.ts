@@ -1,4 +1,4 @@
-import { GridIterator } from "./grid_iterator";
+import {GridIterator} from "./grid_iterator";
 
 export class Calendar {
     minWeeks = 6;
@@ -48,7 +48,7 @@ export class Calendar {
         this.buildGrid();
         this.showCalendar(this.year, this.month, this.day);
     }
-    
+
     contract() {
         if (this.weeks <= this.minWeeks) return;
 
@@ -71,6 +71,11 @@ export class Calendar {
             cell.id = gridIterator.toString();
             cell.style.gridRow = (gridIterator.row + 1).toString();
             cell.style.gridColumn = (gridIterator.col + 1).toString();
+
+            cell.addEventListener("click", event => {
+                const cell = event.target as HTMLElement;
+                this.showCalendar(Number(cell.dataset["year"]), Number(cell.dataset["month"]), Number(cell.dataset["date"]));
+            });
             container.append(cell);
             gridIterator.advance();
         }
@@ -95,6 +100,10 @@ export class Calendar {
             const showMonth = gridIterator.isFirstCell() || dateCounter.getDate() === 1;
             const cell = document.getElementById(gridIterator.toString());
             if (cell == null) return;
+            cell.dataset["date"] = dateCounter.getDate().toString();
+            cell.dataset["month"] = dateCounter.getMonth().toString();
+            cell.dataset["year"] = dateCounter.getFullYear().toString();
+
             setClass(cell, 'current-month', dateCounter.getMonth() === day1.getMonth());
             setClass(cell, 'current-day', sameDate(today, dateCounter));
             setClass(cell, 'selected-day', sameDate(selectedDate, dateCounter));
